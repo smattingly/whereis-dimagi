@@ -60,7 +60,8 @@ async function infiniteScroll(apiPrefix, modelUrl, fields) {
             try {
                 
                 const response = await fetch(`${apiPrefix}${modelUrl}?skip=${skip}&limit=${limit}`, {});
-
+                spinner.style.display = "none";
+                
                 if (!response.ok) {
                     throw new Error(`An error occurred: ${response.status}`);
                 }
@@ -69,7 +70,6 @@ async function infiniteScroll(apiPrefix, modelUrl, fields) {
                 populateTable(results);
                 moreToFetch = results.length === limit;
 
-                spinner.style.display = "none";
             } catch (error) {
                 console.log(error.message);
             }

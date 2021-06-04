@@ -1,7 +1,29 @@
+<style>
+    .hangingindent {
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+</style>
 <div class="row">
 	<div class="col-sm-3"></div>
-	<div class="col-sm-5">
+	<div class="col-sm-7">
 		<h1>Success</h1>
-        <p>Your check in from <%= location %> at <%= time %> was recorded. We estimate your latitude and longitude as <%= lat %>, <%= lng %>.</p>
+        <p class="hangingindent">You checked in 
+            <br>from <code><%= record.location %></code>
+            <br>at <code><%= record.time %></code>.
+        </p>
+        
+        <p class="hangingindent">We guessed <code><%= record.location %></code> is
+            <br>in <%= places[0].adminName1 %> <%= places[0].countryName %>,
+            <br>Lat. <%= record.lat %>, 
+            <br>Lng. <%= record.lng %>.
+        </p>
+        <ul>
+            <% for (let i = 0; i < places.length; i++) { %>
+                <li>
+                    <%= `${places[i].name} ${places[i].adminName1} ${places[i].countryName} Lat. ${places[i].lat} Lng. ${places[i].lng}` %>
+                </li>
+            <% } %>
+        </ul>
 	</div>
 </div>
