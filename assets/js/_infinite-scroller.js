@@ -39,12 +39,12 @@ async function infiniteScroll(apiPrefix, modelUrl, fields) {
                 tr.innerHTML += `<td class="text-${field.align}">${result[field.attr]}</td>`;
             });
 
-            tr.innerHTML += `
-                <td>
-                    <a href="${modelUrl}/${result.id}/edit">
-                        <i class="fa fa-edit" style="color: black; cursor: pointer" data-toggle="tooltip" data-placement="right" title="Edit this record"></i>
-                    </a>
-                </td>`;
+            // tr.innerHTML += `
+            //     <td>
+            //         <a href="${modelUrl}/${result.id}/edit">
+            //             <i class="fa fa-edit" style="color: black; cursor: pointer" data-toggle="tooltip" data-placement="right" title="Edit this record"></i>
+            //         </a>
+            //     </td>`;
 
             tr.innerHTML += `
                 <td>

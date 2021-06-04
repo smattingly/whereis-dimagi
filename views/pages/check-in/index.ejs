@@ -1,21 +1,19 @@
 <div class="d-flex justify-content-between">
     <div>
-        <h1>Widgets</h1>
+        <h1>Check Ins</h1>
     </div>
     <div>
-        <a href="/widget/new" data-test="new-widget-link" aria-label="Create a new widget">
+        <a href="/check-in/new" data-test="new-check-in-link" aria-label="Create a new check-in">
             <i class="fa fa-plus-circle" style="font-size: 48px; color: black" data-toggle="tooltip"
-                data-placement="right" title="Create a new widget">
+                data-placement="right" title="Create a new check-in">
             </i>
         </a>
     </div>
 </div>
 
 <style>
-    table th:nth-child(3) { width:5%; text-align: center; }
-    table th:nth-child(4) { width:5%; text-align: center; }
-    table td:nth-child(3) { width:5%; text-align: center; }
-    table td:nth-child(4) { width:5%; text-align: center; }
+    table th:nth-child(5) { width:5%; text-align: center; }
+    table td:nth-child(5) { width:5%; text-align: center; }
 </style>
 
 <div id="infinite-scroller" class="sticky-table-container">
@@ -23,8 +21,9 @@
         <thead>
             <tr>
                 <th class="text-right">#</th>
-                <th>Name</th>
-                <th><i class="fa fa-edit" style="font-weight: bold; color: black"></i></th>
+                <th>Email</th>
+                <th>Time</th>
+                <th>Location</th>
                 <th><i class="fa fa-trash-o" style="font-weight: bold; color: black"></i></th>
             </tr>
         </thead>
@@ -38,5 +37,5 @@
 
 <script src="/js/_infinite-scroller.js"></script>
 <script>
-    infiniteScroll('/api/v1', '/widget', [{ attr: "id", align: "right" }, { attr: "name", align: "left" }]);
+    infiniteScroll('/api/v1', '/checkin', [{ attr: "id", align: "right" }, { attr: "email", align: 'left' }, { attr: 'time', align: 'right' }, { attr: 'location', align: 'left' }]);
 </script>
