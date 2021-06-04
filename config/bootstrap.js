@@ -26,7 +26,4 @@ module.exports.bootstrap = async function() {
   //   // etc.
   // ]);
   // ```
-for (let i = 0; i < 100; i++) {
-  await Widget.create({name: `widget ${i}`})
-}
 };

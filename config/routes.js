@@ -19,12 +19,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': '/widget',
-  'GET /widget': { view: 'pages/widget/index' }, 
-  'GET /widget/new': { view: 'pages/widget/new'},
-  'GET /widget/:id/edit': function(req, res) { 
-    return res.view('pages/widget/edit', { id: req.params.id });
-  },
+  '/': '/check-in/new',
+  'GET /check-in': { view: 'pages/check-in/index' }, 
+  'GET /check-in/new': { view: 'pages/check-in/new'},
 
   /***************************************************************************
   *                                                                          *

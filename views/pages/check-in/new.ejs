@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-sm-3"></div>
 	<div class="col-sm-5">
-		<h1>Edit widget <%= id %></h1>
-		<form action="/api/v1/widget/<%= id %>" id="edit-widget-form">
+		<h1>Check In</h1>
+		<form action="/api/v1/checkin" id="new-check-in-form">
 			<%- include('./form-groups.ejs') %>
 			<div class="text-right">
 				<button id="submitButton" type="submit" class="btn btn-dark" data-test="submit">
-					Update
+					Submit	
 				</button>
 			</div>
 		</form>
@@ -14,10 +14,12 @@
 </div>
 <script src="/js/_fetch.js"></script>
 <script>
-	const form = document.getElementById("edit-widget-form");
+	const form = document.getElementById("new-check-in-form");
 	form.addEventListener("submit", (event) => {
-		if (handleFormSubmit(event, "PATCH")) {
-			showBanner(`Success. Widget was updated.`, 'success');
+		if (handleFormSubmit(event, "POST")) {
+			const nameInput = document.getElementById('name');
+			showBanner(`Success.`, 'success');
+			form.reset();
 		}
 	});
 </script>
