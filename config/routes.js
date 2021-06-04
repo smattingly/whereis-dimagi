@@ -21,6 +21,7 @@ module.exports.routes = {
 
   '/': '/check-in/new',
   'GET /check-in': { view: 'pages/check-in/index' }, 
+  'POST /check-in': { controller: "check-in", action: "create" }, 
   'GET /check-in/new': { view: 'pages/check-in/new'},
 
   /***************************************************************************

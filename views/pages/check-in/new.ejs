@@ -2,7 +2,7 @@
 	<div class="col-sm-3"></div>
 	<div class="col-sm-5">
 		<h1>Check In</h1>
-		<form action="/api/v1/checkin" id="new-check-in-form">
+		<form method="post" action="/check-in" id="new-check-in-form">
 			<%- include('./form-groups.ejs') %>
 			<div class="text-right">
 				<button id="submitButton" type="submit" class="btn btn-dark" data-test="submit">
@@ -12,7 +12,7 @@
 		</form>
 	</div>
 </div>
-<script src="/js/_fetch.js"></script>
+<!-- <script src="/js/_fetch.js"></script>
 <script>
 	const form = document.getElementById("new-check-in-form");
 	form.addEventListener("submit", (event) => {
@@ -22,4 +22,4 @@
 			form.reset();
 		}
 	});
-</script>
+</script> -->
